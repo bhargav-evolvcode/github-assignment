@@ -1,3 +1,4 @@
+feature1
 name: Simple CI
 
 on:
@@ -6,9 +7,15 @@ on:
   pull_request:
     branches: [main]
 
+name: CI
+
+on: [push, pull_request]
+ main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+ feature1
 
     steps:
       - name: Checkout code
@@ -16,3 +23,9 @@ jobs:
 
       - name: Run CI Task
         run: echo "✅ CI Build Passed"
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a sample step
+        run: echo "CI pipeline running successfully!"
+        main
